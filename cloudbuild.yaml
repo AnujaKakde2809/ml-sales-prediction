@@ -36,7 +36,7 @@ steps:
         'deploy',
         'releases',
         'create',
-        'release-$BUILD_ID',
+        'release-$SHORT_SHA',
         '--delivery-pipeline', 
         'anuja-cloud-run-ml-app-pipeline',
         '--region', 'us-central1',
@@ -46,6 +46,6 @@ steps:
 options:
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
 
-# substitutions:
-#   _SERVICE_NAME: anuja-cloud-run-ml-app-pipeline
+substitutions:
+  _SERVICE_NAME: anuja-cloud-run-ml-app-pipeline
 
