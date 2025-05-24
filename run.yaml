@@ -6,4 +6,4 @@ spec:
   template:
     spec:
       containers:
-      - image:  anuja-ml-sales-app
+      - image: anuja-ml-sales-app
