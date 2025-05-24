@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 import pickle
 import numpy as np
+import logging
+
 app = Flask(__name__)
 # Load the model
 with open('model.pkl', 'rb') as f:
@@ -17,5 +19,6 @@ def predict():
     prediction = model.predict(features)
     return jsonify({'predicted_sales': prediction[0]})
 
+logging.info('Logging statement before app.run')
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
