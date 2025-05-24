@@ -16,18 +16,18 @@ steps:
       ]
     id: 'Push to Artifact Registry'
 
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: 'gcloud'
-    args:
-      [
-        'run', 'deploy', 'anuja-cloud-run-ml-app-pipeline',
-        '--image=us-central1-docker.pkg.dev/$PROJECT_ID/anuja-ml-sales-prediction/anuja-cloud-run-ml-app-pipeline:$SHORT_SHA',
-        '--region', 'us-central1',
-        '--platform', 'managed',
-        '--allow-unauthenticated',
-        '--set-env-vars', 'VERSION=$SHORT_SHA'
-      ]
-    id: 'Deployment of App'
+  # - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  #   entrypoint: 'gcloud'
+  #   args:
+  #     [
+  #       'run', 'deploy', 'anuja-cloud-run-ml-app-pipeline',
+  #       '--image=us-central1-docker.pkg.dev/$PROJECT_ID/anuja-ml-sales-prediction/anuja-cloud-run-ml-app-pipeline:$SHORT_SHA',
+  #       '--region', 'us-central1',
+  #       '--platform', 'managed',
+  #       '--allow-unauthenticated',
+  #       '--set-env-vars', 'VERSION=$SHORT_SHA'
+  #     ]
+  #   id: 'Deployment of App'
 
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'gcloud'
@@ -42,7 +42,8 @@ steps:
         '--region', 'us-central1',
         '--images', 'anuja-cloud-run-ml-app=us-central1-docker.pkg.dev/$PROJECT_ID/anuja-ml-sales-prediction/anuja-cloud-run-ml-app-pipeline:$SHORT_SHA'
       ]
-  
+    id: 'Canary deployment release'
+    
 options:
   defaultLogsBucketBehavior: REGIONAL_USER_OWNED_BUCKET
 
