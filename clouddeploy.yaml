@@ -1,3 +1,12 @@
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: dev
+description: dev canary ml app Run Service
+run:
+  location: projects/faa-gcp-training-14-kfa-0808/locations/us-central1
+
 apiVersion: deploy.cloud.google.com/v1
 kind: DeliveryPipeline
 metadata:
@@ -15,13 +24,5 @@ serialPipeline:
         canaryDeployment:
           percentages: [25,75]
           verify: false
----
-apiVersion: deploy.cloud.google.com/v1
-kind: Target
-metadata:
-  name: dev
-description: dev canary ml app Run Service
-run:
-  location: projects/faa-gcp-training-14-kfa-0808/locations/us-central1
-  service: anuja-cloud-run-ml-app-pipeline
+
 
