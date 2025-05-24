@@ -40,7 +40,7 @@ steps:
         '--delivery-pipeline', 
         'anuja-cloud-run-ml-app-pipeline',
         '--region', 'us-central1',
-        '--images', 'anuja-ml-sales-app=us-central1-docker.pkg.dev/$PROJECT_ID/anuja-ml-sales-prediction/anuja-cloud-run-ml-app-pipeline:$SHORT_SHA'
+        '--images', 'cloud-run-app-anuja=us-central1-docker.pkg.dev/$PROJECT_ID/anuja-ml-sales-prediction/anuja-cloud-run-ml-app-pipeline:$SHORT_SHA'
       ]
   
 options:
