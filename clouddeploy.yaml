@@ -22,3 +22,4 @@ metadata:
 description: dev canary ml app Run Service
 run:
   location: projects/faa-gcp-training-14-kfa-0808/locations/us-central1
+  service: cloud-run-app-anuja
