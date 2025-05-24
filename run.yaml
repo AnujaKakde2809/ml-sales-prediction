@@ -6,4 +6,4 @@ spec:
   template:
     spec:
       containers:
-      - image: cloud-run-app-anuja
+      - image: anuja-cloud-run-ml-app-pipeline
